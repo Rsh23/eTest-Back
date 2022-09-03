@@ -22,11 +22,11 @@ class ProductController extends Controller
     // Esto retornara la lista de productos
     public function index(){
 
-        // $product = Product::all();
+        $product = Product::all();
 
-        // return $product;
+        return $product;
 
-        return 'hola';
+        // return 'hola';
 
     }
 
