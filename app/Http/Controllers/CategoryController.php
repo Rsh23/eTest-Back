@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-
 use App\Traits\ApiResponser;
-use Illuminate\Http\Client\Request;
+
 
 class CategoryController extends Controller
 {
@@ -31,13 +30,13 @@ class CategoryController extends Controller
 
     }
 
-    // Esto creara una instancia de category
-    // public function store( Request $request ){
-
-    // }
 
     // Esto se encargara de mostrar la informacion de una categoria en especifico
     public function show( $category ){
+
+        $category = Category::findOrFail( $category );
+
+        return $this -> succesResponse( $category );
 
     }
 }

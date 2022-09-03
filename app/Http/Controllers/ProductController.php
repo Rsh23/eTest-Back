@@ -24,14 +24,16 @@ class ProductController extends Controller
 
         $product = Product::all();
 
-        return $product;
-
-        // return 'hola';
+        return $this -> succesResponse( $product );
 
     }
 
     // Esto se encargara de mostrar la informacion de un producto en especifico
     public function show( $product ){
+
+        $product = Product::findOrFail( $product );
+
+        return $this -> succesResponse( $product );
 
     }
 
