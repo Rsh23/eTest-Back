@@ -14,10 +14,10 @@
 */
 
 // Category
-$router->get('/category', 'CategoryController@index');
-// $router->get('/category/{category}', 'CategoryController@show');
+$router->get('/categories', 'CategoryController@index');
+$router->get('/categories/{category}', 'CategoryController@show');
 
 
 // Product
-$router->get('/product', 'ProductController@index');
-$router->get('/product/{product}', 'ProductController@show');
+$router->get('/products', 'ProductController@index');
+$router->get('/products/{product}', 'ProductController@show');

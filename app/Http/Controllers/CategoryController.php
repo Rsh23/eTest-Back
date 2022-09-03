@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
         $category = Category::all();
 
-        return $category;
+        return $this -> succesResponse( $category );
 
     }
 
