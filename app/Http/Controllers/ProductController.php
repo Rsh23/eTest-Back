@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Traits\ApiResponser;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -28,10 +30,15 @@ class ProductController extends Controller
 
     }
 
-    // Esto se encargara de mostrar la informacion de un producto en especifico
-    public function show( $product ){
+    // Esto se encargara de buscar productos
+    public function search( Request $request ){
 
-        $product = Product::findOrFail( $product );
+        $search = trim($request -> get('search'));
+        $product = DB::table('product')
+                     -> select('name', 'url_image', 'price')
+                     -> where('name', 'LIKE', '%'.$search.'%')
+                     -> orderBy('name','asc')
+                     -> paginate(10);
 
         return $this -> succesResponse( $product );
 

@@ -30,7 +30,6 @@ class CategoryController extends Controller
 
     }
 
-
     // Esto se encargara de mostrar la informacion de una categoria en especifico
     public function show( $category ){
 

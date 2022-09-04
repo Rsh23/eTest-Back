@@ -21,3 +21,4 @@ $router->get('/categories/{category}', 'CategoryController@show');
 // Product
 $router->get('/products', 'ProductController@index');
 $router->get('/products/{product}', 'ProductController@show');
+$router->get('/search/product', 'ProductController@search');
